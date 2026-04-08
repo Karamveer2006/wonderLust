@@ -61,14 +61,14 @@ async function main() {
 const store = MongoStoreFactory.create({
   mongoUrl: process.env.MONGOOSE_url,
   crypto: {
-    secret: "mysupersecret"
+    secret: process.env.SECRET,
   },
   touchAfter: 24 * 3600
 });
 
 const sessionOptions = {
   store,
-  secret: "mysupersecretcode",
+  secret: process.env.SECRET,
   resave: false,
   saveUninitialized: true,
   cookie: {
@@ -116,9 +116,7 @@ app.use("/listings/:id/reviews",reviews);
 
 
 
-app.get("/",(req,res)=>{
-    res.send("i am root");
-});
+
 
 app.all(/.*/,(req,res,next)=>{
     next(new ExpressError(404,"page not found"));
