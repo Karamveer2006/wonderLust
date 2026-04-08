@@ -1,0 +1,28 @@
+<nav class="navbar navbar-expand-md sticky-top bg-body-tertiary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/"><i class="fa-regular fa-compass"></i></a>
+
+   
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup"  >
+      <div class="navbar-nav">
+   
+       
+        <a class="nav-link" href="/listings">Explore</a>
+        <a class="nav-link" href="/listings/new">add new listing</a>
+        
+      </div>
+      <div class="flex" style="margin-left: auto;" >
+        <% if (!currUser ) { %>
+    <a style="text-decoration: none; color: black; margin-inline:1rem; padding: 2px;" class="nav-link"  href="/signup"><b>Signup</b></a>
+    <a style="text-decoration: none; color: black; margin-inline:1rem; padding: 2px;" class="nav-link" href="/login"><b>Login</b></a>
+<% } else { %>
+    <a style="text-decoration: none; color: black; margin-inline:1rem; padding: 2px;" class="nav-link" href="/logout"><b>Logout</b></a>
+<% } %>
+
+
+       
+      </div>
+      
+    </div>
+  </div>
+</nav>

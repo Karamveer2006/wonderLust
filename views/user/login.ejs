@@ -1,0 +1,96 @@
+<% layout('/layouts/boilerplate') -%>
+<style>
+    /* The form card */
+form {
+    background: white;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #fe424d; /* Wonderlust-style signature red */
+    font-size: 1.8rem;
+}
+
+/* Layout for each input group */
+form div {
+    margin-bottom: 1.2rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: #333;
+}
+
+input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ced4da;
+    border-radius: 0.5rem;
+    box-sizing: border-box; /* Critical for padding */
+    transition: border-color 0.2s;
+}
+
+input:focus {
+    outline: none;
+    border-color: #fe424d;
+    box-shadow: 0 0 0 3px rgba(254, 66, 77, 0.1);
+}
+
+/* Validation styling */
+.invalid-feedback {
+    display: none; /* Hidden by default */
+    color: #dc3545;
+    font-size: 0.85rem;
+    margin-top: 0.25rem;
+}
+
+
+
+
+
+/* Submit button */
+button {
+    width: 100%;
+    padding: 0.8rem;
+    background-color: #fe424d;
+    color: white;
+    border: none;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+button:hover {
+    background-color: #e32c37;
+}
+</style>
+<h1>signup</h1>
+<form action="/login" method="POST" novalidate class="needs-validation">
+    
+    
+    <div  class=" col-md-12">
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username" required>
+        <div class="invalid-feedback">
+        must enter a username 
+      </div>
+    </div>
+    <div class=" col-md-12">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" required>
+        <div class="invalid-feedback">
+        must enter a password
+      </div>
+
+    </div>
+    <button type="submit">login</button>
+</form>
